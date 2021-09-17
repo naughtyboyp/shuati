@@ -8,7 +8,7 @@ int main()
 {
     int n = 0;
     scanf("%d", &n);
-    while(n)
+    while(n)     //运用循环
     {
         printf("%d", n%10);
         n = n/10;
