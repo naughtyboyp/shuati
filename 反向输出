@@ -1,0 +1,17 @@
+输入
+1000<=n<9999      1234
+输出
+反向输出         4321
+#include<stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+    while(n)
+    {
+        printf("%d", n%10);
+        n = n/10;
+    }
+    return 0;
+}
