@@ -1,0 +1,9 @@
+函数printf()的返回型为 int
+返回值为  打印字符的长度；
+
+#include<stdio.h>
+int main()
+{
+    printf("\n%d\n", printf("hello world!"));
+    return 0;
+}
