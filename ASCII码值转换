@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+    char arr[] = {73,11,99,88}; //将ASCII码值转入  数组
+    int sz = sizeof(arr)/sizeof(arr[0]);
+    int i = 0;
+    for(i = 0; i<sz; i++)
+    {
+        printf("%c ", arr[i]);//通过循环打印数组内容；
+    }
+    return 0;
+}
