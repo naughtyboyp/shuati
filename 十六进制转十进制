@@ -1,0 +1,11 @@
+数字：15
+二进制：1111
+八进制： 017
+十六机制：0xe
+
+#include<stdio.h>
+int main()
+{
+    printf("%15d", 0xABCDEF);
+    return 0;
+}
