@@ -2,7 +2,7 @@
 二进制：1111
 八进制： 017
 十六机制：0xe
-
+打印十六进制  printf("%#X\n",0xabc);  有0x用#  
 #include<stdio.h>
 int main()
 {
