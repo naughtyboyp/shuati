@@ -1,0 +1,23 @@
+getchar（）返回值是 ASCII码值  是 int
+getchar 有输入缓存区  会把/n也存进去
+所以需要末尾需要再用  getchar 来消化
+
+
+#include<stdio.h>
+int main()
+{
+    int ch = 0;
+    while((ch=getchar())!=EOF)
+    {
+        if(ch >= 'a' && ch<= 'z' || ch >='A' && ch<='Z')
+        {
+            printf("YES");
+        }
+        else
+        {
+            printf("NO");
+        }
+        getchar();
+    }
+    return 0;
+}
