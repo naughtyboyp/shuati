@@ -1,0 +1,16 @@
+数据类型  float  存储空间时要用 0.0；
+输入输出类型用 %f， 
+double型用 %lf；
+其次 输入的时候要注意输入法是英文键盘；
+
+#include<stdio.h>
+int main()
+{
+    int id = 0;
+    float C = 0.0;
+    float M = 0.0;
+    float E = 0.0;
+    scanf("%d;%f,%f,%f", &id, &C, &M, &E);
+    printf("%d, %.2f, %.2f, %.2f", id, C, M, E);
+    return 0;
+}
