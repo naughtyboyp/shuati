@@ -1,0 +1,11 @@
+1 向左移n位 相当于是 2的n次方
+#include<stdio.h>
+int main()
+{
+    int n = 0;
+    while(~scanf("%d", &n))
+    {
+        printf("%d", 1<<n );
+    }
+    return 0;
+}
