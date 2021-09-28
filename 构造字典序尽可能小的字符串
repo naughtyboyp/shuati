@@ -1,0 +1,47 @@
+#include <iostream>
+
+//后遭字典序尽可能小的字符串
+using namespace std;
+
+const int Maxn=2005;
+
+//输入
+char S[Maxn];
+int N;
+
+void solve(){
+    //剩余字符串为S[a],S[a+1],...,S[b]
+    int a=0,b=N-1;
+
+    while(a<=b){
+        //将从左起从有起的字符串比较
+        bool left=false;                                //输出左边的(初始化为false)
+        for(int i=0;a-i<=b;i++){
+            if(S[a+i]<S[b-i]){
+                left=true;
+                break;
+            }
+            else if(S[a+i]>S[b-i]){
+                left=false;
+                break;
+            }
+        }
+
+        if(left)
+            putchar(S[a++]);
+        else
+            putchar(S[b--]);
+    }
+    putchar('\n');
+}
+int main()
+{
+    scanf("%d",&N);
+    getchar();
+    for(int i=0;i<N;i++)
+        scanf("%c",&S[i]);
+
+    solve();
+    return 0;
+}
+
