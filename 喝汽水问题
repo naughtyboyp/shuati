@@ -9,3 +9,22 @@
 于是：一行解决：
 //手上有几个五毛钱拿来买水了呢？
      //(n-0.5)/0.5==  2*n-1；
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int money = 0;
+    int total = 0;//一共喝多少
+    int empty = 0;//我有多少空瓶
+    scanf("%d", &money);
+    total = money;
+    empty = money;
+    while(empty>=2)
+    {
+        total+=empty/2;
+        empty = empty/2 + empty%2;//这一步很漂亮  是我的话肯定就用if语句了
+    }
+    printf("%d", total);
+
+	return 0;
+ }
