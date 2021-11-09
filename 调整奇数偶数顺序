@@ -1,0 +1,42 @@
+输入一个整数数组，调整奇偶数顺序
+1.从左往右找，找到偶数就停  
+2.从右往左找，找到奇数就停
+//本题就是简单模拟，体现一种左右往里查找的一种方法
+#include <stdio.h>
+#include <string.h>
+void move(int* a, int sz)
+{
+    int left = 0;
+    int right = sz-1;
+    while(left<right)
+    {
+        //找偶数
+        while((left < right) && a[left]%2 == 1)//防止全是奇数，发生越界
+        {
+            left++;
+        }
+        //找奇数
+        while((left < right) && a[right]%2 == 0)
+        {
+            right--;
+        }
+        if(left < right)
+        {
+            int temp = a[left];
+            a[left] = a[right];
+            a[right] = temp;
+        }
+    }
+}
+int main()
+{
+    int a[] = {1,2,3,4,5,6,7,8,9};
+    int sz = sizeof(a)/sizeof(a[0]);
+    move(a,sz);
+    int i = 0;
+    for(i = 0; i< sz; i++)
+    {
+        printf("%d ", a[i]);
+    }
+	return 0;
+ }
