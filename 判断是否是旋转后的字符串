@@ -80,7 +80,7 @@ int isleftmove(char* str1, char* str2)
     strncat(str1, str1, len1);
     //2.判断str2是否是str1的子串
     //strstr -- 找子串
-    char* ret = strstr(str1, str2);//在str1中找是否有 str2 这个子串,没找到返回NULL
+    char* ret = strstr(str1, str2);//作用是返回字符串中首次出现子串的地址。 str2 这个子串,没找到返回NULL
     if(ret == NULL)
     {
         return 0;
