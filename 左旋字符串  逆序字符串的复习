@@ -26,13 +26,15 @@
 //ab cdef
 //ba fedc
 //cdefab
-void reverse(char* left, char* right)
+void reverse(char* left, char* right)//逆序字符串函数
 {
     while(left < right)
     {
+        //1.前后交换
         char tmp = *left;
         *left = *right;
         *right = tmp;
+        //2.交换下一位
         left++;
         right--;
     }
