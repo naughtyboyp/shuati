@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int h = 0;
+	int m = 0;
+	int s = 0;
+	scanf("%d:%d:%d", &h, &m, &s);
+	int n = 0;
+	cin >> n;
+	while(n--)
+    {
+        s++;
+        if(s >=60)
+        {
+            s = 0;
+            m++;
+            if(m >= 60)
+            {
+                m = 0;
+                h++;
+                if(h == 24)
+                {
+                    h = 0;
+                }
+            }
+        }
+    }
+    printf("%02d:%02d:%02d", h, m, s);//学到了输出，不够前面自动补0或者用字符比较麻烦就是
+ 
+}
