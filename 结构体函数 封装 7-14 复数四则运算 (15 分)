@@ -1,0 +1,107 @@
+#include<iostream>
+using namespace std;
+
+//总结：结构体与函数
+//通过本题我主要学到了 函数的封装  
+//如：打印式子的封装，这样做的好处是可以节省相似的重复操作，更高效
+
+
+struct fushu
+{
+    double a;//实部
+    double b;//虚部
+}c[66];
+
+void jia();//加法
+void jian();//减法
+void chen();//乘法
+void chu();//除法
+void shizi(double a, double b);//打印式子
+void ans(double a, double b);//打印结果
+
+int main()
+{
+    cin >> c[1].a >> c[1].b >> c[2].a >> c[2].b;
+    jia();
+    jian();
+    chen();
+    chu();
+}
+void jia()
+{
+    double a = c[1].a + c[2].a;
+    double b = c[1].b + c[2].b;
+    shizi(c[1].a,c[1].b);
+    cout << " + ";
+    shizi(c[2].a,c[2].b);
+    cout << " = ";
+    ans(a,b);
+    cout << endl;
+}
+void jian()
+{
+    double a = c[1].a - c[2].a;
+    double b = c[1].b - c[2].b;
+    shizi(c[1].a,c[1].b);
+    cout << " - ";
+    shizi(c[2].a,c[2].b);
+    cout << " = ";
+    ans(a,b);
+    cout << endl;
+}
+void chen()
+{
+    double a = c[1].a*c[2].a - c[1].b*c[2].b;
+    double b = c[1].a*c[2].b + c[1].b*c[2].a;
+    shizi(c[1].a,c[1].b);
+    cout << " * ";
+    shizi(c[2].a,c[2].b);
+    cout << " = ";
+    ans(a,b);
+    cout << endl;
+}
+void chu()
+{
+    double a = (c[1].a*c[2].a + c[1].b*c[2].b)/(c[2].a*c[2].a + c[2].b*c[2].b);
+    double b = (c[1].b*c[2].a - c[1].a*c[2].b)/(c[2].a*c[2].a +c[2].b*c[2].b);
+    shizi(c[1].a,c[1].b);
+    cout << " / ";
+    shizi(c[2].a,c[2].b);
+    cout << " = ";
+    ans(a,b);
+    cout << endl;
+}
+void shizi(double a, double b)//打印式子
+{
+    if(b < 0)//b 小于0 不用打加号
+    {
+        printf("(%.1lf%.1lfi)", a, b);
+    }
+    else
+    {
+        printf("(%.1lf+%.1lfi)", a, b);
+    }
+}
+
+void ans(double a, double b)//打印结果的式子
+{
+    //先判断存在a，b的存在
+    //虚部不存在，只输出实部
+    if(b>=-0.05 &&b <= 0.05)
+    {
+        printf("%.1lf", a);
+    }
+    else if(a>=-0.05 && a <=0.05)//实部不存在
+    {
+        printf("%.1lfi", b);
+    }
+    //到这里 说明a,b都存在
+    else if(b < 0)//虚部小于0，不用打加号
+    {
+        printf("%.1lf%.1lfi", a, b);
+    }
+    else
+    {
+        printf("%.1lf+%.1lfi",a, b);
+    }
+}
